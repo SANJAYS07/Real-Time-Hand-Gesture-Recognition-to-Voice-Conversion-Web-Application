@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help - Search Image</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            position: relative;
+            background-color: #00e8f819; /* Light blue background */
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            border: 5px solid #000000; /* Black border */
+            border-radius: 10px;
+            background-color: rgba(0, 255, 13, 0.147);
+            box-shadow: 0 4px 8px rgb(0, 255, 217);
+            width: 50%; /* Form width */
+            max-width: 600px; /* Maximum width of the form */
+        }
+        label {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 2px solid #ff84005a;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #000000; /* Black */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgb(255, 0, 0);
+            text-decoration: none;
+            text-align: center;
+        }
+        .button:hover {
+            background-color: #656562ba; /* Yellow on hover */
+        }
+        .back-button {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+        }
+        .notice {
+            color: red;
+            font-size: 20px;
+            animation: blinker 1s linear infinite;
+        }
+        @keyframes blinker {
+            50% { opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="notice">NOTE : Search as 'username' if you want to know gesture for your name</div>
+    <h1>Search for a Gesture</h1>
+    <form action="/search" method="post">
+        <label for="image_name">Enter a Word</label>
+        <input type="text" id="image_name" name="image_name" required>
+        <button type="submit" class="button">Search</button>
+    </form>
+    <a href="/option" class="button back-button">Back</a>
+</body>
+</html>
